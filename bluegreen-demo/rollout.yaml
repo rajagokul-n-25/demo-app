@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: demo-app
-        image: nginx:1.19   # 🔹 Blue version (old)
+        image: nginx:1.20   # 🔹 Blue version (old)
         ports:
         - containerPort: 80
 
