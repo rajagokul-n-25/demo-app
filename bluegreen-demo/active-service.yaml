@@ -3,10 +3,12 @@ kind: Service
 metadata:
   name: bluegreen-active
 spec:
+  type: NodePort   # ✅ expose via NodePort
   selector:
     app: bluegreen-demo
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
+    port: 80          # Service Port
+    targetPort: 80    # Container Port
+    nodePort: 30080   # Fixed NodePort (optional, else auto-assigned)
 

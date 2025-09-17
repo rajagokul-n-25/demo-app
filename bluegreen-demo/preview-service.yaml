@@ -3,10 +3,12 @@ kind: Service
 metadata:
   name: bluegreen-preview
 spec:
+  type: NodePort   # ✅ expose via NodePort
   selector:
     app: bluegreen-demo
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
+    nodePort: 30081   # Different NodePort
 
